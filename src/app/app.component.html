@@ -1,2 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h1> Welcome to {{ title }}! </h1>
+<div class="container">
+  <h1 class="mt-4">{{ title }}</h1>
+  <app-pizza [pizza]="selectedPizza"></app-pizza>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-3 text-center" *ngFor="let pizza of pizzaList">
+      <div class="card" (click)="onSelect(pizza)">
+        <img [src]="pizza.image" class="card-img-top" [alt]="pizza.name">
+        <div class="card-body">
+          <h5 class="card-title">{{ pizza.name }}</h5>
+          <p class="card-text">Prix: {{ pizza.price }} &euro;</p>
+          <a href="#" class="btn btn-primary">Commander</a>
+        </div>
+      </div>
+    </div>
+  </div>      
+</div>

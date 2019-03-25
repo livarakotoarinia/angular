@@ -3,3 +3,7 @@ $color: red;
 h1{
     color: $color;
 }
+
+.card:hover{
+    cursor: pointer;
+}
