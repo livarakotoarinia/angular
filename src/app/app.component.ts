@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pizza } from './models/pizza';
+import { PizzaService } from './services/pizza.service';
 
 const PIZZAS: Pizza[] = [
   { id: 1, name: 'Reine', price: 12.99, image: 'assets/pizza-1.png' },
@@ -11,13 +12,15 @@ const PIZZAS: Pizza[] = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  // template: ``,
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'pizzaparty';
   selectedPizza: Pizza;
   pizzaList = PIZZAS;
+
+  constructor(private pizzaService: PizzaService){ }
 
   onSelect(pizza: Pizza): void{
     console.log(pizza);

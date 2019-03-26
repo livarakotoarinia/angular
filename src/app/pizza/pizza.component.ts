@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pizza } from '../models/pizza';
+
 
 @Component({
   selector: 'app-pizza',
@@ -6,5 +8,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pizza.component.scss']
 })
 export class PizzaComponent {
-
+  @Input() pizza: Pizza;
 }
